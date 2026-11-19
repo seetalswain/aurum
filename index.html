@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09080a">
+    <meta name="description" content="A film for Aurum, made with love for Men's Day.">
+    <title>AURUM — A Film About You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="film-grain" aria-hidden="true"></div>
+    <div class="gold-dust" id="goldDust" aria-hidden="true"></div>
+
+    <button class="music-control" id="musicControl" type="button" aria-label="Play soundtrack" aria-pressed="false">
+        <span class="music-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="music-label">SOUNDTRACK</span>
+    </button>
+    <p class="music-hint" id="musicHint" role="status" aria-live="polite" hidden>
+        Soundtrack unavailable. Check that <strong>assets/music.mp3</strong> exists and is a supported MP3 file.
+    </p>
+    <audio id="soundtrack" src="assets/music.mp3" preload="none" loop></audio>
+
+    <main class="film" id="film">
+        <section class="scene scene-opening is-active" id="opening" aria-labelledby="opening-title" aria-hidden="false">
+            <div class="opening-copy">
+                <p class="opening-kicker reveal-first">NOT EVERY STORY NEEDS AN AUDIENCE.</p>
+                <h1 class="opening-title" id="opening-title">Some stories are meant for just one person.</h1>
+                <span class="title-rule" aria-hidden="true"></span>
+                <button class="text-button opening-button" id="beginFilm" type="button">
+                    <span>Begin the film</span><span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> 01</p>
+            <div class="corner-mark" aria-hidden="true">A</div>
+        </section>
+
+        <section class="scene scene-title" id="titleScene" aria-labelledby="title-heading" aria-hidden="true" hidden>
+            <div class="title-light" aria-hidden="true"></div>
+            <p class="scene-kicker">A STORY IN SIX SCENES</p>
+            <h2 class="aurum-title" id="title-heading">
+                <span class="title-letters" aria-hidden="true"><i style="--letter:0">A</i><i style="--letter:1">U</i><i style="--letter:2">R</i><i style="--letter:3">U</i><i style="--letter:4">M</i></span>
+                <span class="visually-hidden">Aurum</span>
+            </h2>
+            <p class="film-title">A FILM ABOUT YOU</p>
+            <span class="title-rule" aria-hidden="true"></span>
+            <p class="starring">Starring: The man who makes my world a little more beautiful.</p>
+            <button class="text-button scene-next" id="toStory" type="button">
+                <span>Let the story begin</span><span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> 02</p>
+        </section>
+
+        <section class="scene scene-story" id="storyScene" aria-labelledby="story-heading" aria-hidden="true" hidden>
+            <p class="scene-kicker">CHAPTER ONE <span>—</span> THE STORY</p>
+            <h2 class="section-title" id="story-heading">It starts with you.</h2>
+            <div class="story-card" id="storyCard" aria-live="polite" aria-atomic="true">
+                <span class="story-count" id="storyCount">01 <span>/</span> 04</span>
+                <p class="story-line" id="storyLine"></p>
+            </div>
+            <button class="text-button scene-next" id="nextStory" type="button">
+                <span>Continue</span><span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> 03</p>
+        </section>
+
+        <section class="scene scene-question" id="questionScene" aria-labelledby="question-heading" aria-hidden="true" hidden>
+            <p class="scene-kicker">A VERY IMPORTANT PAUSE</p>
+            <p class="question-intro">Before we continue, I have a very important question.</p>
+            <h2 class="question-title" id="question-heading">Who's the luckiest person in this relationship?</h2>
+            <div class="answer-list" id="answerList">
+                <button class="answer-button" type="button" data-answer="you">Obviously you.</button>
+                <button class="answer-button" type="button" data-answer="me">Obviously me.</button>
+                <button class="answer-button" type="button" data-answer="both">We're both lucky.</button>
+            </div>
+            <p class="answer-response" id="answerResponse" aria-live="polite"></p>
+            <button class="text-button scene-next" id="toLetter" type="button" hidden>
+                <span>I'll allow it. Continue</span><span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> 04</p>
+        </section>
+
+        <section class="scene scene-letter" id="letterScene" aria-labelledby="letter-heading" aria-hidden="true" hidden>
+            <p class="scene-kicker">CHAPTER TWO <span>—</span> A NOTE FROM ME</p>
+            <h2 class="section-title" id="letter-heading">Something I wanted you to know.</h2>
+            <div class="letter-stage" id="letterStage">
+                <article class="letter-paper" id="letterPaper" aria-hidden="true">
+                    <div class="letter-copy">
+                        <!-- Edit these paragraphs directly to personalize the letter. -->
+                        <p class="letter-salutation">Dear Aurum,</p>
+                        <p>If this were a movie, I don't think I could ever write a character quite like you. Not because you're perfect, but because being exactly yourself is already my favourite thing.</p>
+                        <p>You make the ordinary feel a little brighter just by being part of it. Your kindness, your heart, your wonderfully-you way of seeing the world: I notice it all, and I love you for it.</p>
+                        <p>Thank you for making room for laughter, for showing up as yourself, and for making love feel both like a grand adventure and the safest place to land.</p>
+                        <p>I hope you know that you are appreciated in all the quiet moments, not just the big ones. I am so glad this story brought our pages together.</p>
+                        <p>And, for the record, if I had to choose my favourite leading man, I wouldn't even need a second take.</p>
+                        <p class="letter-signoff">With all my love,</p>
+                        <p class="handwritten">Always yours <span>A</span></p>
+                    </div>
+                </article>
+                <div class="envelope" aria-hidden="true">
+                    <div class="envelope-back"></div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-side envelope-side-left"></div>
+                    <div class="envelope-side envelope-side-right"></div>
+                    <div class="envelope-front"></div>
+                    <div class="wax-seal">A</div>
+                </div>
+            </div>
+            <button class="text-button scene-next letter-button" id="openLetter" type="button">
+                <span>Open your letter</span><span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button class="text-button scene-next letter-continue" id="toFinal" type="button" hidden>
+                <span>One last scene</span><span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> 05</p>
+        </section>
+
+        <section class="scene scene-final" id="finalScene" aria-labelledby="final-heading" aria-hidden="true" hidden>
+            <div class="final-spotlight" aria-hidden="true"></div>
+            <p class="scene-kicker final-kicker">THE FINAL SCENE</p>
+            <p class="final-line final-line-one">And if life were a movie...</p>
+            <p class="final-line final-line-two">I would never skip a single scene with you.</p>
+            <span class="title-rule final-rule" aria-hidden="true"></span>
+            <h2 class="final-title" id="final-heading">HAPPY MEN'S DAY, AURUM.</h2>
+            <p class="final-dedication">You're my favourite part of this story.</p>
+            <button class="text-button replay-button" id="replayFilm" type="button">
+                <span>Watch our film again</span><span class="button-arrow" aria-hidden="true">↺</span>
+            </button>
+            <p class="frame-number">THE END <span>·</span> AND THEN, ALWAYS</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
