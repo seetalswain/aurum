@@ -19,7 +19,7 @@
     <p class="music-hint" id="musicHint" role="status" aria-live="polite" hidden>
         Soundtrack unavailable. Check that <strong>assets/music.mp3</strong> exists and is a supported MP3 file.
     </p>
-    <audio id="soundtrack" src="assets/music.mp3" preload="none" loop></audio>
+    <audio id="soundtrack" src="./assets/music.mp3" preload="none" loop></audio>
 
     <main class="film" id="film">
         <section class="scene scene-opening is-active" id="opening" aria-labelledby="opening-title" aria-hidden="false">
@@ -64,6 +64,127 @@
             <p class="frame-number">A PRIVATE SCREENING <span>·</span> 03</p>
         </section>
 
+        <section class="scene scene-experience scene-quiz" id="quizScene" aria-labelledby="quiz-intro-heading" aria-hidden="true" hidden>
+            <button class="text-button experience-back" id="quizBackToExtras" type="button">
+                <span>Back to the little extras</span><span class="button-arrow" aria-hidden="true">↶</span>
+            </button>
+            <div class="quiz-intro" id="quizIntro">
+                <p class="scene-kicker">A PRIVATE SCREENING, JUST FOR YOU</p>
+                <h2 class="section-title quiz-intro-title" id="quiz-intro-heading">How well do you know us?</h2>
+                <p class="quiz-intro-copy">Twenty-five questions. Five little chapters. One person who should know me by heart.</p>
+                <div class="quiz-intro-stats" aria-label="Challenge overview">
+                    <div><span>05</span><small>ROUNDS</small></div>
+                    <div><span>25</span><small>QUESTIONS</small></div>
+                    <div><span>♡</span><small>ONE VERY SPECIAL PERSON</small></div>
+                </div>
+                <button class="text-button quiz-begin" id="beginChallenge" type="button">
+                    <span>Begin challenge</span><span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+            <div class="quiz-content" id="quizContent" hidden>
+                <p class="scene-kicker" id="quizRoundHeading"></p>
+                <p class="experience-progress-label" id="quizProgressLabel">QUESTION 01 / 25</p>
+                <div class="experience-progress" id="quizProgress" role="progressbar" aria-label="Challenge progress" aria-valuemin="0" aria-valuemax="25" aria-valuenow="0">
+                    <span id="quizProgressFill"></span>
+                </div>
+                <h2 class="question-title" id="quiz-heading" tabindex="-1"></h2>
+                <div class="experience-answers" id="quizAnswers" role="group" aria-labelledby="quiz-heading"></div>
+                <p class="experience-reaction" id="quizReaction" aria-live="polite" aria-atomic="true"></p>
+                <p class="quiz-answer-reveal" id="quizAnswerReveal" aria-live="polite" aria-atomic="true" hidden></p>
+                <p class="quiz-live-score" id="quizLiveScore" aria-live="polite" aria-atomic="true"></p>
+                <button class="text-button scene-next" id="quizContinue" type="button" hidden>
+                    <span>Continue</span><span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+            <div class="round-complete" id="roundComplete" hidden>
+                <p class="scene-kicker">CHAPTER COMPLETE</p>
+                <h2 class="section-title" id="roundCompleteHeading" tabindex="-1">A little chapter, beautifully done.</h2>
+                <p class="round-complete-score" id="roundCompleteScore"></p>
+                <p class="round-complete-note" id="roundCompleteNote"></p>
+                <button class="text-button scene-next" id="continueRound" type="button">
+                    <span>Continue</span><span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+            <div class="quiz-result" id="quizResult" hidden>
+                <p class="scene-kicker">YOUR OFFICIAL FINDINGS</p>
+                <h2 class="section-title" tabindex="-1">A perfect match. Obviously.</h2>
+                <div class="quiz-result-stats" aria-live="polite">
+                    <p id="quizTotalCorrect"></p>
+                    <p id="quizTotalIncorrect"></p>
+                    <p id="quizTotalAttempts"></p>
+                </div>
+                <div class="quiz-result-message">
+                    <p>Congratulations, Babe!</p>
+                    <p>You've officially completed the 25-question test.</p>
+                    <p>But here's the thing...</p>
+                    <p>You don't have to get every answer right to prove how much you mean to me.</p>
+                    <p>You're already my favourite person.</p>
+                    <p>Your reward? A lifetime subscription to my love. No cancellations allowed. ♡</p>
+                </div>
+                <button class="text-button scene-next quiz-again" id="quizAgain" type="button">
+                    <span>Take the challenge again</span><span class="button-arrow" aria-hidden="true">↺</span>
+                </button>
+                <button class="text-button scene-next quiz-story-continue" id="quizStoryContinue" type="button">
+                    <span>Continue our story</span><span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> THE BABE FILES</p>
+        </section>
+
+        <section class="scene scene-experience scene-surprises" id="surprisesScene" aria-labelledby="surprises-heading" aria-hidden="true" hidden>
+            <button class="text-button experience-back" type="button" data-back-to-extras>
+                <span>Back to the little extras</span><span class="button-arrow" aria-hidden="true">↶</span>
+            </button>
+            <p class="scene-kicker">THREE LITTLE THINGS, ONLY FOR YOU</p>
+            <h2 class="section-title" id="surprises-heading">Choose your surprise.</h2>
+            <p class="extras-intro">Open all three little doors to continue our story.</p>
+            <div class="surprise-grid">
+                <article class="surprise-item">
+                    <button class="surprise-card" type="button" aria-expanded="false" aria-controls="surprise-romance">
+                        <span class="surprise-number">01</span><span class="surprise-title">A little romance</span><span class="surprise-icon" aria-hidden="true">✦</span>
+                    </button>
+                    <div class="surprise-message" id="surprise-romance" hidden>
+                        <p>If I could keep one thing from every day, it would be the little moments with you. The grand gestures are lovely, but you're my favourite in the quiet in-between.</p>
+                    </div>
+                </article>
+                <article class="surprise-item">
+                    <button class="surprise-card" type="button" aria-expanded="false" aria-controls="surprise-chaos">
+                        <span class="surprise-number">02</span><span class="surprise-title">A little chaos</span><span class="surprise-icon" aria-hidden="true">✦</span>
+                    </button>
+                    <div class="surprise-message" id="surprise-chaos" hidden>
+                        <p>Official forecast: 99% chance I'll steal your snacks, distract you mid-sentence, and then look completely innocent. You have been lovingly warned.</p>
+                    </div>
+                </article>
+                <article class="surprise-item">
+                    <button class="surprise-card" type="button" aria-expanded="false" aria-controls="surprise-confession">
+                        <span class="surprise-number">03</span><span class="surprise-title">A little confession</span><span class="surprise-icon" aria-hidden="true">✦</span>
+                    </button>
+                    <div class="surprise-message" id="surprise-confession" hidden>
+                        <p>Sometimes I catch myself smiling at a message from you like it's the first time. I have decided not to get over it. You're welcome.</p>
+                    </div>
+                </article>
+            </div>
+            <button class="text-button scene-next" id="toMystery" type="button" hidden>
+                <span>Continue our story</span><span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> BONUS SCENE 02</p>
+        </section>
+
+        <section class="scene scene-experience scene-mystery" id="mysteryScene" aria-labelledby="mystery-heading" aria-hidden="true" hidden>
+            <button class="text-button experience-back" type="button" data-back-to-extras>
+                <span>Back to the little extras</span><span class="button-arrow" aria-hidden="true">↶</span>
+            </button>
+            <p class="scene-kicker">A SMALL INTERRUPTION, FROM YOUR FAVOURITE PERSON</p>
+            <h2 class="section-title" id="mystery-heading">The mystery button.</h2>
+            <p class="mystery-intro">For no reason at all. Or exactly the reason you need.</p>
+            <button class="mystery-button" id="mysteryButton" type="button">Tell me something...</button>
+            <p class="mystery-message" id="mysteryMessage" aria-live="polite" aria-atomic="true">Go on. I have a feeling you'll like this.</p>
+            <button class="text-button scene-next" id="mysteryContinue" type="button" hidden>
+                <span>Continue to your letter</span><span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> BONUS SCENE 03</p>
+        </section>
+
         <section class="scene scene-question" id="questionScene" aria-labelledby="question-heading" aria-hidden="true" hidden>
             <p class="scene-kicker">A VERY IMPORTANT PAUSE</p>
             <p class="question-intro">Before we continue, I have a very important question.</p>
@@ -74,10 +195,10 @@
                 <button class="answer-button" type="button" data-answer="both">We're both lucky.</button>
             </div>
             <p class="answer-response" id="answerResponse" aria-live="polite"></p>
-            <button class="text-button scene-next" id="toLetter" type="button" hidden>
-                <span>I'll allow it. Continue</span><span class="button-arrow" aria-hidden="true">→</span>
+            <button class="text-button scene-next" id="backFromQuestion" type="button" hidden>
+                <span>Back to the little extras</span><span class="button-arrow" aria-hidden="true">↶</span>
             </button>
-            <p class="frame-number">A PRIVATE SCREENING <span>·</span> 04</p>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> BONUS QUESTION</p>
         </section>
 
         <section class="scene scene-letter" id="letterScene" aria-labelledby="letter-heading" aria-hidden="true" hidden>
@@ -126,8 +247,45 @@
             <button class="text-button replay-button" id="replayFilm" type="button">
                 <span>Watch our film again</span><span class="button-arrow" aria-hidden="true">↺</span>
             </button>
+            <button class="text-button extras-entry" id="openExtras" type="button">
+                <span>Explore the little extras</span><span class="button-arrow" aria-hidden="true">✦</span>
+            </button>
             <p class="frame-number">THE END <span>·</span> AND THEN, ALWAYS</p>
         </section>
+
+        <section class="scene scene-extras" id="extrasScene" aria-labelledby="extras-heading" aria-hidden="true" hidden>
+            <p class="scene-kicker">A FEW MORE THINGS, JUST FOR YOU</p>
+            <h2 class="section-title" id="extras-heading">The little extras.</h2>
+            <p class="extras-intro">Because one film could never fit everything I want to say.</p>
+            <div class="extras-grid">
+                <button class="experience-card" id="openQuiz" type="button">
+                    <span class="experience-number">01</span>
+                    <span class="experience-name">How well do you know us?</span>
+                    <span class="experience-detail">Twenty-five questions. Five little chapters.</span>
+                    <span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+                <button class="experience-card" id="openSurprises" type="button">
+                    <span class="experience-number">02</span>
+                    <span class="experience-name">Choose your surprise</span>
+                    <span class="experience-detail">Three little doors, all yours to open.</span>
+                    <span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+                <button class="experience-card" id="openMystery" type="button">
+                    <span class="experience-number">03</span>
+                    <span class="experience-name">The mystery button</span>
+                    <span class="experience-detail">A little something, whenever you need it.</span>
+                    <span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+            <button class="text-button scene-next" id="backToFinal" type="button">
+                <span>Back to the final scene</span><span class="button-arrow" aria-hidden="true">↶</span>
+            </button>
+            <button class="text-button extras-question" id="openQuestion" type="button">
+                <span>Answer one very important question</span><span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="frame-number">A PRIVATE SCREENING <span>·</span> BONUS SCENES</p>
+        </section>
+
     </main>
 
     <script src="script.js"></script>
